@@ -1,0 +1,107 @@
+{
+  "enterprise": {
+    "description": "Our most powerful models, designed for cutting-edge AI/ML research, large-scale data processing, and complex simulations. These models offer unparalleled performance and memory capacity for the most demanding enterprise workloads.",
+    "models": [
+      {
+        "name": "Titan-X Pro",
+        "specs": {
+          "Use Case": "Advanced AI/ML, Large-scale data processing",
+          "Performance": "4.2 PFLOPS",
+          "Memory": "128 GB HBM3",
+          "Power Consumption": "700W",
+          "Architecture": "Next-Gen Tensor Core"
+        }
+      },
+      {
+        "name": "Quantum-Leap 2",
+        "specs": {
+          "Use Case": "Quantum simulation, Financial modeling",
+          "Performance": "3.8 PFLOPS",
+          "Memory": "256 GB DDR5",
+          "Power Consumption": "650W",
+          "Architecture": "Unified Memory Architecture"
+        }
+      },
+      {
+        "name": "Colossus-7B",
+        "specs": {
+          "Use Case": "Large Language Model Training",
+          "Performance": "5.1 PFLOPS",
+          "Memory": "192 GB HBM3e",
+          "Power Consumption": "800W",
+          "Architecture": "Transformer Engine"
+        }
+      }
+    ]
+  },
+  "mid-tier": {
+    "description": "High-performance models that provide a balance of power and efficiency. Ideal for AI inference, high-performance computing, video transcoding, and cloud gaming, offering excellent value for a wide range of business applications.",
+    "models": [
+      {
+        "name": "Orion-M60",
+        "specs": {
+          "Use Case": "AI inference, High-performance computing",
+          "Performance": "1.5 TFLOPS",
+          "Memory": "64 GB GDDR6",
+          "Power Consumption": "300W",
+          "Architecture": "CUDA Core"
+        }
+      },
+      {
+        "name": "Pegasus-T4",
+        "specs": {
+          "Use Case": "Video transcoding, Cloud gaming",
+          "Performance": "1.2 TFLOPS",
+          "Memory": "48 GB GDDR6",
+          "Power Consumption": "250W",
+          "Architecture": "Streaming Multiprocessor"
+        }
+      },
+      {
+        "name": "Centauri-AIO",
+        "specs": {
+          "Use Case": "All-in-One Enterprise Solution",
+          "Performance": "1.8 TFLOPS",
+          "Memory": "96 GB DDR5",
+          "Power Consumption": "350W",
+          "Architecture": "Heterogeneous Compute"
+        }
+      }
+    ]
+  },
+  "small": {
+    "description": "Compact and efficient models optimized for edge computing, IoT devices, and mobile applications. These models deliver impressive performance in a small footprint with low power consumption, perfect for on-device AI.",
+    "models": [
+      {
+        "name": "Nano-V",
+        "specs": {
+          "Use Case": "Edge computing, IoT",
+          "Performance": "500 GFLOPS",
+          "Memory": "16 GB LPDDR5",
+          "Power Consumption": "75W",
+          "Architecture": "Low-Power SoC"
+        }
+      },
+      {
+        "name": "Pico-AI",
+        "specs": {
+          "Use Case": "Mobile AI applications",
+          "Performance": "300 GFLOPS",
+          "Memory": "8 GB LPDDR5",
+          "Power Consumption": "40W",
+          "Architecture": "Neural Engine"
+        }
+      },
+      {
+        "name": "Spark-1",
+        "specs": {
+          "Use Case": "Embedded Systems, Drones",
+          "Performance": "200 GFLOPS",
+          "Memory": "4 GB LPDDR4",
+          "Power Consumption": "25W",
+          "Architecture": "Microcontroller Unit"
+        }
+      }
+    ]
+  }
+}

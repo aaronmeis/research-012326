@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.display-4 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.tier-selector {
+  display: flex;
+  justify-content: center;
+}
+
+.tier-selector .btn {
+  text-transform: capitalize;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.tier-selector .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.tier-selector .btn-outline-secondary {
+  color: #6c757d;
+  border-color: #ced4da;
+}
+
+.tier-selector .btn-outline-secondary:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.tier-description {
+  margin: 1.5rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-title {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.list-group-item {
+  background-color: transparent;
+  border-color: #e9ecef;
+  padding: 0.75rem 1rem;
+}
+
+.list-group-item strong {
+  color: #495057;
+}
