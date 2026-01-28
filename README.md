@@ -1,6 +1,14 @@
-# Model Specifications Viewer
+# AI Agents & Models - Current State
 
-A React + Vite Single Page Application for viewing and comparing AI model specifications across different tiers.
+A modern React + Vite Single Page Application showcasing AI model specifications, visualizations, and research reports for January 2026.
+
+## Features
+
+- **Model Specifications**: Browse and compare AI models across different tiers (Enterprise, Mid-Tier, Small)
+- **Visualizations**: View interactive image cards with model visualizations
+- **Research Reports**: Download PDF reports on AI developments and emerging technologies
+- **Modern Design**: Clean, responsive UI inspired by modern web design principles
+- **GitHub Pages Ready**: Fully configured for static site deployment
 
 ## Development
 
@@ -18,30 +26,50 @@ npm run build
 npm run preview
 ```
 
+## Project Structure
+
+```
+research-012326/
+├── src/
+│   ├── components/
+│   │   ├── ImageCard.jsx      # Image display component
+│   │   ├── ModelCard.jsx       # Model specification card
+│   │   ├── ModelList.jsx       # Model grid layout
+│   │   └── TierSelector.jsx    # Tier selection buttons
+│   ├── data/
+│   │   └── models.json         # Model specifications data
+│   ├── App.jsx                 # Main application component
+│   ├── App.css                 # Application styles
+│   └── main.jsx                # Application entry point
+├── scripts/
+│   └── create-404.js           # Build script for GitHub Pages
+├── index.html                  # HTML template
+├── vite.config.js              # Vite configuration
+└── package.json                # Dependencies and scripts
+```
+
 ## GitHub Pages Deployment
 
-This SPA is configured to work with GitHub Pages. Follow these steps to deploy:
+This SPA is fully configured for GitHub Pages deployment. The build process automatically:
 
-### Option 1: Deploy from `dist` folder (Recommended)
+1. Builds the React application
+2. Creates `404.html` for SPA routing
+3. Copies PDF files to the `dist` folder
+4. Copies image files to the `dist` folder
+
+### Quick Deploy
 
 1. **Build the project:**
    ```bash
    npm run build
    ```
-   This will create the `dist` folder with all production files and automatically create `404.html` for SPA routing.
 
-2. **Configure GitHub Pages:**
-   - Go to your repository Settings → Pages
-   - Under "Source", select "Deploy from a branch"
-   - Choose the branch (usually `main` or `master`)
-   - Select `/ (root)` or `/dist` folder depending on your setup
-   - Click Save
+2. **Deploy the `dist` folder:**
+   - Option A: Copy contents of `dist/` to repository root
+   - Option B: Configure GitHub Pages to serve from `/dist` folder
+   - Option C: Use GitHub Actions (see below)
 
-3. **If deploying from root:**
-   - Copy the contents of `dist` to the root of your repository
-   - Commit and push
-
-### Option 2: Deploy from `dist` folder using GitHub Actions
+### GitHub Actions Deployment
 
 Create `.github/workflows/deploy.yml`:
 
@@ -74,19 +102,29 @@ jobs:
       - uses: actions/deploy-pages@v4
 ```
 
-### Important Notes
+## Build Output
 
-- The `404.html` file is automatically created during build to handle SPA routing on GitHub Pages
-- The app uses relative paths (`base: './'`) for compatibility with GitHub Pages
-- If deploying to a project site (e.g., `username.github.io/repo-name/`), update `vite.config.js` to set `base: '/repo-name/'` or use the `GITHUB_PAGES_BASE` environment variable
+The `dist` folder contains:
 
-## Project Structure
+- `index.html` - Main entry point with PDF download links
+- `404.html` - SPA routing fallback for GitHub Pages
+- `assets/` - CSS and JavaScript bundles
+- PDF files - Research reports (3 files)
+- Image files - Visualizations (2 PNG files)
 
-- `src/` - Source files
-  - `components/` - React components
-  - `data/` - Model data (JSON)
-  - `App.jsx` - Main application component
-  - `main.jsx` - Application entry point
-- `dist/` - Production build output (generated)
-- `scripts/` - Build scripts
-  - `create-404.js` - Script to create 404.html for GitHub Pages
+## Configuration
+
+- **Base Path**: Configured for relative paths (`base: './'`) for GitHub Pages compatibility
+- **SPA Routing**: `404.html` automatically created for client-side routing
+- **Static Assets**: PDFs and images automatically copied during build
+
+## Technologies
+
+- **React 19** - UI library
+- **Vite 7** - Build tool and dev server
+- **Bootstrap 5** - CSS framework (via CDN in components)
+- **Modern CSS** - Custom styling with animations and responsive design
+
+## License
+
+Copyright © 2026 AI Research. All rights reserved.

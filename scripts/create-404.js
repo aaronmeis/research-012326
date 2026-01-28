@@ -35,3 +35,21 @@ pdfFiles.forEach(pdfFile => {
     console.warn(`⚠ Warning: ${pdfFile} not found, skipping...`);
   }
 });
+
+// Copy image files to dist folder
+const imageFiles = [
+  'unnamed (2).png',
+  'unnamed (3).png'
+];
+
+imageFiles.forEach(imageFile => {
+  const sourcePath = join(rootDir, imageFile);
+  const destPath = join(rootDir, 'dist', imageFile);
+  
+  if (existsSync(sourcePath)) {
+    copyFileSync(sourcePath, destPath);
+    console.log(`✓ Copied ${imageFile} to dist folder`);
+  } else {
+    console.warn(`⚠ Warning: ${imageFile} not found, skipping...`);
+  }
+});

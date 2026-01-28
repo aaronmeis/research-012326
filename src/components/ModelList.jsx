@@ -3,11 +3,9 @@ import ModelCard from './ModelCard';
 
 const ModelList = ({ models }) => {
   return (
-    <div className="row g-4">
-      {models.map((model) => (
-        <div key={model.name} className="col-md-6 col-lg-4">
-          <ModelCard model={model} />
-        </div>
+    <div className="grid">
+      {models.map((model, index) => (
+        <ModelCard key={model.name} model={model} index={index} />
       ))}
     </div>
   );
