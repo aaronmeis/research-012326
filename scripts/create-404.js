@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, copyFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -16,3 +16,22 @@ const fourOhFourPath = join(rootDir, 'dist', '404.html');
 writeFileSync(fourOhFourPath, indexContent, 'utf-8');
 
 console.log('✓ Created 404.html for GitHub Pages SPA routing');
+
+// Copy PDF files to dist folder
+const pdfFiles = [
+  'AI+Developments+Report_+January+2026.pdf',
+  'January-2026-Report.pdf',
+  'Top-AI-Agents-Models-and-Emerging-Technologies-in-2026-An-Enterprise-Architects-Guide.pdf'
+];
+
+pdfFiles.forEach(pdfFile => {
+  const sourcePath = join(rootDir, pdfFile);
+  const destPath = join(rootDir, 'dist', pdfFile);
+  
+  if (existsSync(sourcePath)) {
+    copyFileSync(sourcePath, destPath);
+    console.log(`✓ Copied ${pdfFile} to dist folder`);
+  } else {
+    console.warn(`⚠ Warning: ${pdfFile} not found, skipping...`);
+  }
+});

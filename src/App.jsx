@@ -21,6 +21,21 @@ function App() {
     day: 'numeric',
   });
 
+  const pdfFiles = [
+    {
+      name: 'AI Developments Report - January 2026',
+      file: 'AI+Developments+Report_+January+2026.pdf'
+    },
+    {
+      name: 'January 2026 Report',
+      file: 'January-2026-Report.pdf'
+    },
+    {
+      name: 'Top AI Agents, Models and Emerging Technologies in 2026 - An Enterprise Architect\'s Guide',
+      file: 'Top-AI-Agents-Models-and-Emerging-Technologies-in-2026-An-Enterprise-Architects-Guide.pdf'
+    }
+  ];
+
   return (
     <div className="container mt-5">
       <header className="text-center mb-4">
@@ -28,6 +43,29 @@ function App() {
         <p className="lead text-muted">A professional comparison of our model tiers.</p>
         <p className="text-muted"><em>As of {asOfDate}</em></p>
       </header>
+      
+      <div className="row mb-4">
+        <div className="col-12">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">📄 Download Reports</h5>
+              <div className="d-flex flex-column flex-md-row gap-2 flex-wrap">
+                {pdfFiles.map((pdf, index) => (
+                  <a
+                    key={index}
+                    href={`./${pdf.file}`}
+                    download
+                    className="btn btn-outline-primary"
+                  >
+                    📥 {pdf.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <main>
         <div className="d-flex justify-content-center">
           <TierSelector
