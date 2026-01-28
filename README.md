@@ -57,17 +57,51 @@ This SPA is fully configured for GitHub Pages deployment. The build process auto
 3. Copies PDF files to the `dist` folder
 4. Copies image files to the `dist` folder
 
-### Quick Deploy
+### Manual Deployment (Recommended)
+
+**Option 1: Deploy to Root (index.html)**
 
 1. **Build the project:**
    ```bash
    npm run build
    ```
 
-2. **Deploy the `dist` folder:**
-   - Option A: Copy contents of `dist/` to repository root
-   - Option B: Configure GitHub Pages to serve from `/dist` folder
-   - Option C: Use GitHub Actions (see below)
+2. **Copy dist files to root:**
+   ```bash
+   # Copy all files from dist to root
+   cp -r dist/* .
+   cp -r dist/assets . 2>/dev/null || true
+   ```
+
+3. **Commit and push:**
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+4. **Configure GitHub Pages:**
+   - Go to your repository on GitHub
+   - Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `main` (or your default branch)
+   - Folder: `/ (root)`
+   - Click Save
+
+5. **Your site will be available at:**
+   `https://yourusername.github.io/research-012326/`
+
+**Option 2: Use the Deployment Script**
+
+```bash
+# Run the deployment script (builds and copies files)
+./scripts/deploy.sh
+
+# Then commit and push
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+```
 
 ### GitHub Actions Deployment
 

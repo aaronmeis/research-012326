@@ -21,7 +21,8 @@ console.log('✓ Created 404.html for GitHub Pages SPA routing');
 const pdfFiles = [
   'AI+Developments+Report_+January+2026.pdf',
   'January-2026-Report.pdf',
-  'Top-AI-Agents-Models-and-Emerging-Technologies-in-2026-An-Enterprise-Architects-Guide.pdf'
+  'Top-AI-Agents-Models-and-Emerging-Technologies-in-2026-An-Enterprise-Architects-Guide.pdf',
+  'Enterprise_AI_Strategy_2026.pdf'
 ];
 
 pdfFiles.forEach(pdfFile => {
